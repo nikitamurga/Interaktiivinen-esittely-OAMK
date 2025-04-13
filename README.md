@@ -1,12 +1,33 @@
-# React + Vite
+# Interaktiivinen esittely OAMK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🧭 This is an interactive introduction to OAMK (Oulu University of Applied Sciences), aimed at helping new students — both Finnish and international — get familiar with the campus, student life, and the city of Oulu.
 
-Currently, two official plugins are available:
+## 🎯 Goal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is part of a student internship and aims to:
 
-## Expanding the ESLint configuration
+- Guide new students arriving in Oulu (transport, accommodation, navigation)
+- Introduce OAMK facilities: classrooms, libraries, cafeterias
+- Present an interactive map with key student places around the city
+- Visualize a “student path” — a step-by-step journey for a new student
+- Offer useful tips and resources in both Finnish 🇫🇮 and English 🇬🇧
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔧 Technologies Used
+
+- [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
+- [Figma (for prototyping)](https://www.figma.com/)
+- [Leaflet](https://leafletjs.com/) (planned for interactive map)
+- [i18next](https://react.i18next.com/) (for multilingual support)
+
+---
+
+## 📌 Notes
+This is a work-in-progress demo.
+
+---
+
+## 💡 Authors
+Nikita Murga
