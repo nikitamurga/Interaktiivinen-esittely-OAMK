@@ -21,3 +21,13 @@ This project is part of a student internship and aims to:
 - [Figma (for prototyping)](https://www.figma.com/)
 - [Leaflet](https://leafletjs.com/) (planned for interactive map)
 - [i18next](https://react.i18next.com/) (for multilingual support)
+
+---
+
+## 📌 Notes
+This is a work-in-progress demo.
+
+---
+
+## 💡 Authors
+Nikita Murga
