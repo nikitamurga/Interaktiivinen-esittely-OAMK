@@ -2,8 +2,6 @@
 
 🧭 This is an interactive introduction to OAMK (Oulu University of Applied Sciences), aimed at helping new students — both Finnish and international — get familiar with the campus, student life, and the city of Oulu.
 
-![Preview](./public/preview.png)
-
 ## 🎯 Goal
 
 This project is part of a student internship and aims to:
