@@ -5,7 +5,6 @@ function Footer() {
     <footer className="oamk-footer">
       <div className="footer-columns">
         <div className="footer-column">
-          <img src="/oamk-logo.png" alt="OAMK logo" className="footer-logo" />
           <p>p. 020 611 0200</p>
           <p>Yliopistokatu 9, 90570 Oulu</p>
           <a href="https://www.oamk.fi">Tilaa uutiskirje</a>

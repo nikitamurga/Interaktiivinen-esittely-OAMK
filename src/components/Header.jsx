@@ -7,7 +7,6 @@ function Header() {
       <div className="header-container">
       <div className="logo">
   <Link to="/">
-    <img src="/oamk-logo.png" alt="OAMK logo" style={{ height: '40px' }} />
   </Link>
 </div>
         <nav className="nav">

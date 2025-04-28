@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import './Polku.css';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const slides = [
   {
     title: 'Saapuminen Ouluun',
     category: 'Lentokenttä',
-    image: '/images/oulu-lentokentta.jpg',
+    images: [
+      '/public/photos/oulu_airport_outdoor_2.jpg',
+      '/public/photos/lentokenttä ulkona pysäkki.JPG',
+      '/public/photos/airport_kartta_EN.png'
+    ],
     content: (
       <>
         <h3>Etäisyys</h3>
@@ -38,7 +44,10 @@ const slides = [
   {
     title: 'Saapuminen Ouluun',
     category: 'Rautatieasema',
-    image: '/images/rautatieasema.jpg',
+    images: [
+      '/public/photos/rautatieasema_ulkona.jpg',
+      '/public/photos/Rautatieasema_kartta.jpg',
+    ],
     content: (
       <>
         <h3>Etäisyys</h3>
@@ -77,7 +86,10 @@ const slides = [
   {
     title: 'Saapuminen Ouluun',
     category: 'Linja-autoasema',
-    image: '/images/linja-autoasema.jpg',
+    images: [
+      '/public/photos/Linja-autoasema_ulkona.jpg',
+      '/public/photos/Linja-autoasema_pysäkki.JPG',
+    ],
     content: (
       <>
         <h3>Etäisyys</h3>
@@ -114,7 +126,12 @@ const slides = [
   {
     title: 'Saapuminen opiskelija-asuntoon',
     category: '',
-    image: '/images/psoas.jpg',
+    images: [
+      '/public/photos/PSOAS 1.JPG',
+      '/public/photos/PSOAS 2.JPG',
+      '/public/photos/PSOAS 3.JPG',
+      '/public/photos/PSOAS 4.JPG'
+    ],
     content: (
       <>
         <h3>Asunnon hakeminen</h3>
@@ -145,7 +162,19 @@ const slides = [
   {
     title: 'Ensimmäinen vierailu OAMK Linnanmaan kampukselle',
     category: '',
-    image: '/images/oamk-kampus.jpg',
+    images: [
+      '/public/photos/OAMK-Linnanmaa_ulkona.jpg',
+      '/public/photos/OAMK-Linnanmaa_ulkona 2x.jpg',
+      '/public/photos/Campus_ruokala.webp',
+      '/public/photos/info.JPG',
+      '/public/photos/shop.JPG',
+      '/public/photos/käytävä 4.JPG',
+      '/public/photos/käytävä 6.JPG',
+      '/public/photos/ruokala 1.JPG',
+      '/public/photos/kirjasto 4.JPG',
+      '/public/photos/käytävä 3.JPG',
+      '/public/photos/käytävä 1.JPG',
+    ],
     content: (
       <>
         <h3>Saapuminen kampukselle</h3>
@@ -158,7 +187,7 @@ const slides = [
         <ul>
           <li>Kampuksella on paljon ravintoloita, kahviloita ja jopa kauppoja</li>
           <li>Kaikki tilat löytyvät helposti sovelluksilla <a href="https://www.mazemap.com/" target="_blank">MazeMap</a> ja <a href="https://www.tuudo.fi/" target="_blank">Tuudo</a></li>
-          <li>Tuudosta löytyy mm. lukujärjestys, kampuskartta, ruokalat, tentit ja ilmoittautumiset</li>
+          <li>Tuudosta löytyy mm. lukujärjestys, kampuskartta, ilmoittautumiset ja muut.</li>
           <li><a href="https://www.oulu.fi/fi/yliopisto/kirjasto" target="_blank">Oulun yliopiston kirjasto</a></li>
           <li><a href="https://ict.oulu.fi/opiskelijoille/" target="_blank">ict.oulu.fi/opiskelijoille</a> – OAMK:n tunnukset, verkot, tulostus ja muut IT-ohjeet</li>
         </ul>
@@ -169,7 +198,11 @@ const slides = [
   {
     title: 'Virallisten asioiden hoitaminen',
     category: '',
-    image: '/images/viralliset.jpg',
+    images: [
+      'public/photos/Kela.JPG',
+      '/public/photos/DVV.JPG',
+      '/public/photos/YTHS.JPG'
+    ],
     content: (
       <>
         <h3>Kelan tuet</h3>
@@ -198,7 +231,16 @@ const slides = [
   {
     title: 'Opiskelun aloittaminen',
     category: '',
-    image: '/images/opiskelu.jpg',
+    images: [
+      '/public/photos/tilat 2.JPG',
+      '/public/photos/tilat1.jpg',
+      '/public/photos/tilat 3.JPG',
+      '/public/photos/labra 2.webp',
+      '/public/photos/labra 1.webp',
+      '/public/photos/käytävä TIK 3.JPG',
+      '/public/photos/keittiö 2.JPG',
+      '/public/photos/käytävä TIK 1.JPG'
+    ],
     content: (
       <>
         <h3>Ensimmäiset päivät</h3>
@@ -228,7 +270,16 @@ const slides = [
   {
     title: 'Kaupunkiin tutustuminen',
     category: '',
-    image: '/images/oulu-keskusta.jpg',
+    images: [
+      '/public/photos/Oulu_Panorama-.jpg',
+      '/public/photos/Oulu_2-1.jpg',
+      '/public/photos/Policeman.avif',
+      '/public/photos/Oulun-tuomiokirkko1920x1440-general.webp',
+      '/public/photos/Finnkino_Plaza_Oulu_.jpg',
+      '/public/photos/kauppakeskus_valkea.webp',
+      '/public/photos/Oulun-Ideapark.jpg',
+      '/public/photos/UniMove.JPG',
+    ],
     content: (
       <>
         <h3>Ensiaskeleet uudessa kaupungissa</h3>
@@ -297,7 +348,17 @@ export default function Polku() {
       <h2>{slide.title} {slide.category && `– ${slide.category}`}</h2>
       <div className="slide">
         <div className="image-container">
+        {slide.images ? (
+          <Carousel showThumbs={false} infiniteLoop autoPlay>
+            {slide.images.map((src, i) => (
+              <div key={i}>
+                <img src={src} alt={`Slide ${i + 1}`} />
+              </div>
+            ))}
+          </Carousel>
+        ) : (
           <img src={slide.image} alt={slide.category || slide.title} />
+        )}
         </div>
         <div className="text-container">
           {slide.content}
