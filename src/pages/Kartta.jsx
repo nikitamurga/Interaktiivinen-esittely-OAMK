@@ -77,7 +77,7 @@ const locations = [
     type: 'transport',
     url: 'https://www.osl.fi/'
   },
-  
+
   {
     name: 'Elokuvateatteri Star',
     position: [65.02461755971902, 25.48272367596612],

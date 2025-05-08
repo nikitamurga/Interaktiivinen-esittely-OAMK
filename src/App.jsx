@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Etusivu from './pages/Etusivu';
 import Kartta from './pages/Kartta';
 import Polku from './pages/Polku';
