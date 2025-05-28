@@ -1,23 +1,52 @@
-    .marker-cluster div {
-        background-color: rgba(247, 148, 29, 0.7);
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        border-radius: 50%;
-        color: white;
-        font-weight: bold;
-        font-size: 14px;
-        border: none !important;
-        box-shadow: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-image: none    !important;
+  box-shadow:      none     !important;
+}
 
-    .marker-cluster {
-        background-color: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-  }
+.marker-cluster-small {
+  width: 40px  !important;
+  height: 40px !important;
+  margin-left: -20px !important;
+  margin-top:  -20px !important;
+  background-color: #f39200 !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 50% !important;
+}
 
+.marker-cluster-medium {
+  width: 50px  !important;
+  height: 50px !important;
+  margin-left: -25px !important;
+  margin-top:  -25px !important;
+  background-color: #f39200 !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 50% !important;
+}
+
+.marker-cluster-large {
+  width: 60px  !important;
+  height: 60px !important;
+  margin-left: -30px !important;
+  margin-top:  -30px !important;
+  background-color: #f39200 !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 50% !important;
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background: none    !important;
+  width: 100%         !important;
+  height: 100%        !important;
+  margin: 0           !important;
+  line-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ffffff      !important;
+  font-size: 14px     !important;
+}

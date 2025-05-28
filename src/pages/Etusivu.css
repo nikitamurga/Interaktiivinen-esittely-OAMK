@@ -1,16 +1,16 @@
 .hero {
-    background-image: url('public/photos/oamk-campus.webp');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-  }
+  background-image: url('/photos/oamk-campus.webp');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
 
   .hero::before {
     content: '';
