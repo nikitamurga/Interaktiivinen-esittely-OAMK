@@ -1,36 +1,36 @@
 .marker-cluster-small,
 .marker-cluster-medium,
 .marker-cluster-large {
-  background-image: none    !important;
-  box-shadow:      none     !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
 .marker-cluster-small {
-  width: 40px  !important;
+  width: 40px !important;
   height: 40px !important;
   margin-left: -20px !important;
-  margin-top:  -20px !important;
-  background-color: #f39200 !important;
+  margin-top: -20px !important;
+  background-color: #f7941D !important;
   border: 2px solid #ffffff !important;
   border-radius: 50% !important;
 }
 
 .marker-cluster-medium {
-  width: 50px  !important;
+  width: 50px !important;
   height: 50px !important;
   margin-left: -25px !important;
-  margin-top:  -25px !important;
-  background-color: #f39200 !important;
+  margin-top: -25px !important;
+  background-color: #f7941D !important;
   border: 2px solid #ffffff !important;
   border-radius: 50% !important;
 }
 
 .marker-cluster-large {
-  width: 60px  !important;
+  width: 60px !important;
   height: 60px !important;
   margin-left: -30px !important;
-  margin-top:  -30px !important;
-  background-color: #f39200 !important;
+  margin-top: -30px !important;
+  background-color: #f7941D !important;
   border: 2px solid #ffffff !important;
   border-radius: 50% !important;
 }
@@ -38,15 +38,75 @@
 .marker-cluster-small div,
 .marker-cluster-medium div,
 .marker-cluster-large div {
-  background: none    !important;
-  width: 100%         !important;
-  height: 100%        !important;
-  margin: 0           !important;
+  background: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
   line-height: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: #ffffff      !important;
-  font-size: 14px     !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+}
+
+
+@media (max-width: 768px) {
+  .marker-cluster-small {
+    width: 35px !important;
+    height: 35px !important;
+    margin-left: -17.5px !important;
+    margin-top: -17.5px !important;
+  }
+
+  .marker-cluster-medium {
+    width: 45px !important;
+    height: 45px !important;
+    margin-left: -22.5px !important;
+    margin-top: -22.5px !important;
+  }
+
+  .marker-cluster-large {
+    width: 55px !important;
+    height: 55px !important;
+    margin-left: -27.5px !important;
+    margin-top: -27.5px !important;
+  }
+
+  .marker-cluster-small div,
+  .marker-cluster-medium div,
+  .marker-cluster-large div {
+    font-size: 13px !important;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .marker-cluster-small {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: -15px !important;
+    margin-top: -15px !important;
+  }
+
+  .marker-cluster-medium {
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: -20px !important;
+    margin-top: -20px !important;
+  }
+
+  .marker-cluster-large {
+    width: 50px !important;
+    height: 50px !important;
+    margin-left: -25px !important;
+    margin-top: -25px !important;
+  }
+
+  .marker-cluster-small div,
+  .marker-cluster-medium div,
+  .marker-cluster-large div {
+    font-size: 12px !important;
+  }
 }

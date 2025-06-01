@@ -8,6 +8,7 @@ import 'leaflet.markercluster';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
+
 function MapCleanup() {
   const map = useMap();
   useEffect(() => {
@@ -37,9 +38,9 @@ const LOCATIONS = [
   // Kulttuuri
   { name: 'Elokuvateatteri Star', position: [65.0246176, 25.4827237], icon: 'clapperboard.svg', type: 'vapaa-aika', url: 'https://www.elokuvateatteristar.fi/', media: { type: 'image', src: 'photos/Elokuvateatteri Star.jpeg', alt: 'Elokuvateatteri Star'} },
   { name: 'Finnkino Plaza', position: [65.0111442, 25.4654882], icon: 'clapperboard.svg', type: 'vapaa-aika', url: 'https://www.finnkino.fi/ohjelmisto/plaza-oulu', media: { type: 'image', src: 'photos/Finnkino_Plaza_Oulu_.jpg', alt: 'Finnkino'} },
-  { name: 'Kulttuuritalo Valve', position: [65.01413350333846, 25.47054100849657], icon: 'theater-mask.svg', type: 'vapaa-aika', url: 'https://www.kulttuurivalve.fi/', media: { type: 'image', src: 'photos/Valve.jpg', alt: 'Valve'} },
+  { name: 'Kulttuuritalo Valve', position: [65.01413350333846, 25.47054100849657], icon: 'art.svg', type: 'vapaa-aika', url: 'https://www.kulttuurivalve.fi/', media: { type: 'image', src: 'photos/Valve.jpg', alt: 'Valve'} },
   { name: 'Oulun Sinfonia (Madetojan sali)', position: [65.00319041352526, 25.480251494916185], icon: 'music.svg', type: 'vapaa-aika', url: 'https://www.oulunmusiikkikeskus.fi/madetojan-sali.html', media: { type: 'image', src: 'photos/Madetojan_sali.jpg', alt: 'Madetojan_sali'} },
-  { name: 'Oulun taidemuseo', position: [65.01888092939876, 25.482604217259727], icon: 'museum.svg', type: 'vapaa-aika', url: 'https://ouluntaidemuseo.fi/', media: { type: 'image', src: 'photos/oulun-taidemuseo.jpg', alt: 'oulun-taidemuseo'} },
+  { name: 'Oulun taidemuseo', position: [65.01888092939876, 25.482604217259727], icon: 'art.svg', type: 'vapaa-aika', url: 'https://ouluntaidemuseo.fi/', media: { type: 'image', src: 'photos/oulun-taidemuseo.jpg', alt: 'oulun-taidemuseo'} },
   { name: 'Oulun teatteri', position: [65.0145481, 25.4625148], icon: 'drama.svg', type: 'vapaa-aika', url: 'https://oulunteatteri.fi/', media: { type: 'image', src: 'photos/Oulun teatteri.avif', alt: 'Oulun teatteri'} },
   { name: 'Pekurin kirjasto', position: [65.0118443, 25.4684133], icon: 'book-open-text.svg', type: 'vapaa-aika', url: 'https://outi.finna.fi/OrganisationInfo/Home#85365', media: { type: 'image', src: 'photos/Pekurin-kirjasto.jpg', alt: 'Pekurin kirjasto'} },
   { name: 'Pohjois-Pohjanmaan museo', position: [65.01771226834494, 25.475426623340393], icon: 'museum.svg', type: 'vapaa-aika', url: 'https://pohjoispohjanmaanmuseo.fi/', media: { type: 'image', src: 'photos/Pohjois-Pohjanmaan museo.avif', alt: 'Pohjois-Pohjanmaan museo'} },
@@ -52,13 +53,13 @@ const LOCATIONS = [
 
   // Iltamenot
   { name: '1bar', position: [65.01270616834637, 25.467423240495393], icon: 'beer.svg', type: 'iltamenot', url: 'https://1bar.fi/', media: { type: 'image', src: 'photos/1bar.webp', alt: '1bar'} },
-  { name: '45 Special', position: [65.0106654092159, 25.46972761714795], icon: 'beer.svg', type: 'iltamenot', url: 'https://www.45special.com/', media: { type: 'image', src: 'photos/45 Special.jpg', alt: '45 Special'} },
-  { name: 'Café Kuluma', position: [65.01286825649956, 25.466783525950273], icon: 'coffee.svg', type: 'iltamenot', url: 'https://kuluma.fi/', media: { type: 'image', src: 'photos/Café Kuluma.jpg', alt: 'Café Kuluma'} },
+  { name: '45 Special', position: [65.0106654092159, 25.46972761714795], icon: 'party.svg', type: 'iltamenot', url: 'https://www.45special.com/', media: { type: 'image', src: 'photos/45 Special.jpg', alt: '45 Special'} },
+  { name: 'Café Kuluma', position: [65.01286825649956, 25.466783525950273], icon: 'beer.svg', type: 'iltamenot', url: 'https://kuluma.fi/', media: { type: 'image', src: 'photos/Café Kuluma.jpg', alt: 'Café Kuluma'} },
   { name: 'Cocktail Company', position: [65.01342017027312, 25.47365196813835], icon: 'cocktail.svg', type: 'iltamenot', url: 'https://www.cocktailcompany.fi/', media: { type: 'image', src: 'photos/Cocktail-Company.jpg', alt: 'Cocktail Company'} },
   { name: 'Heidi’s Bier Bar', position: [65.01113656140794, 25.468959923432433], icon: 'beer.svg', type: 'iltamenot', url: 'https://heidisbierbar.fi/oulu', media: { type: 'image', src: 'photos/Heidi’s Bier Bar.jpg', alt: 'Heidi’s Bier Bar'} },
   { name: 'Ilona', position: [65.0109571270327, 25.466692418626184], icon: 'party.svg', type: 'iltamenot', url: 'https://www.ilonaoulu.fi/', media: { type: 'image', src: 'photos/Ilona.jpg', alt: 'Ilona'} },
   { name: 'Kaarlenholvi', position: [65.01270244890975, 25.466575988910137], icon: 'beer.svg', type: 'iltamenot', url: 'https://jumpru.fi/', media: { type: 'image', src: 'photos/Kaarlenholvi.avif', alt: 'Kaarlenholvi'} },
-  { name: 'Mango Discobar', position: [65.01011692824626, 25.47139371816021], icon: 'beer.svg', type: 'iltamenot', url: 'https://mangodiscobar.fi/', media: { type: 'image', src: 'photos/Mango Discobar.jpg', alt: 'Mango Discobar'} },
+  { name: 'Mango Discobar', position: [65.01011692824626, 25.47139371816021], icon: 'party.svg', type: 'iltamenot', url: 'https://mangodiscobar.fi/', media: { type: 'image', src: 'photos/Mango Discobar.jpg', alt: 'Mango Discobar'} },
   { name: 'Snooker Time', position: [65.0117915510633, 25.481710896287783], icon: 'snooker.svg', type: 'iltamenot', url: 'https://snookertime.net/', media: { type: 'image', src: 'photos/Snooker Time.avif', alt: 'Snooker Time'} },
   { name: 'St. Michael', position: [65.01284999893767, 25.47514805982332], icon: 'beer.svg', type: 'iltamenot', url: 'https://www.stmichael.fi/', media: { type: 'image', src: 'photos/St. Michael.jpg', alt: 'St. Michael'} },
   { name: 'Teerenpeli', position: [65.01226883166746, 25.46784034250793], icon: 'beer.svg', type: 'iltamenot', url: 'https://www.teerenpeli.com/fi/Ravintolat/Oulu-Teerenpeli', media: { type: 'image', src: 'photos/Teerenpeli.jpg', alt: 'Teerenpeli'} },
@@ -202,21 +203,60 @@ export default function Kartta() {
     osm:       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
   };
+  const handleLocateClick = () => {
+    if (!navigator.geolocation) {
+      alert('Selaimesi ei tue paikannusta');
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const latlng = [coords.latitude, coords.longitude];
+        const map = mapRef.current;
+        if (!map) return;
 
+        if (!map._userMarker) {
+          map._userMarker = L.marker(latlng).addTo(map);
+          map._userCircle = L.circle(latlng, { radius: coords.accuracy }).addTo(map);
+        } else {
+          map._userMarker.setLatLng(latlng);
+          map._userCircle.setLatLng(latlng).setRadius(coords.accuracy);
+        }
+
+        map.flyTo(latlng, 14, { duration: 1.0 });
+      },
+      (err) => {
+        console.error(err);
+        alert('Paikannus epäonnistui: ' + err.message);
+      },
+      { enableHighAccuracy: true, maximumAge: 0 }
+    );
+  };
 
   return (
     <div className="map-wrapper">
       <h2 style={{ textAlign: 'center' }}>Interaktiivinen kartta</h2>
-      <div className="controls">
-        <label>
-          Karttataso:&nbsp;
+      <div
+        className="controls"
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          gap: '0.75rem',
+          marginBottom: '1rem',
+          background: '#fff',
+          padding: '0.5rem',
+          borderRadius: '4px'
+        }}
+      >
+        <label style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+          Karttataso:
           <select value={layer} onChange={e => setLayer(e.target.value)}>
             <option value="osm">OpenStreetMap</option>
             <option value="satellite">Satelliitti</option>
           </select>
         </label>
-        <label>
-          Suodatus:&nbsp;
+        <label style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+          Suodatus:
           <select value={filter} onChange={e => setFilter(e.target.value)}>
             {FILTERS.map(f => (
               <option key={f.value} value={f.value}>
@@ -225,19 +265,33 @@ export default function Kartta() {
             ))}
           </select>
         </label>
-        <button onClick={() => setLocateAkt(true)}>
-          Missä minä?
+        <button
+          style={{
+            backgroundColor: '#f7941D',
+            color: '#fff',
+            padding: '0.5rem 1rem',
+            borderRadius: '4px',
+            border: 'none',
+            cursor: 'pointer',
+            fontWeight: 'bold'
+          }}
+          onClick={() => setLocateAkt(true)}
+        >
+          Missä olen?
         </button>
       </div>
       <MapContainer
-        key={`${layer}-${filter}`}
         center={[65.0131, 25.4712]}
         zoom={12}
         scrollWheelZoom
         style={{ height: '70vh', width: '100%' }}
       >
         <MapCleanup />
-        <TileLayer url={tileUrls[layer]} attribution="&copy; OpenStreetMap contributors" />
+        <TileLayer
+        key={layer}
+        url={tileUrls[layer]}
+        attribution="© OpenStreetMap contributors"
+        />
 
         <SovitaRajat locations={filtered} />
         <ClusterLayer locations={filtered} />

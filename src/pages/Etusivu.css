@@ -12,50 +12,116 @@
   overflow: hidden;
 }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 0;
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-buttons button {
+  background-color: #f7941d;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-buttons button:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    height: 80vh;
+    align-items: flex-end;
+    padding-bottom: 2rem;
   }
 
   .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 2rem;
+    max-width: 90%;
+    padding: 1.5rem;
   }
 
   .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-buttons {
+    gap: 0.75rem;
+  }
+
+  .hero-buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .hero {
+    height: 60vh;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
   }
 
   .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
   }
 
   .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .hero-buttons button {
-    background-color: #f7941d;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
-
-  .hero-buttons button:hover {
-    opacity: 0.85;
-    transform: scale(1.05);
-  }
+}
