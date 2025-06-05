@@ -203,34 +203,6 @@ export default function Kartta() {
     osm:       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
   };
-  const handleLocateClick = () => {
-    if (!navigator.geolocation) {
-      alert('Selaimesi ei tue paikannusta');
-      return;
-    }
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        const latlng = [coords.latitude, coords.longitude];
-        const map = mapRef.current;
-        if (!map) return;
-
-        if (!map._userMarker) {
-          map._userMarker = L.marker(latlng).addTo(map);
-          map._userCircle = L.circle(latlng, { radius: coords.accuracy }).addTo(map);
-        } else {
-          map._userMarker.setLatLng(latlng);
-          map._userCircle.setLatLng(latlng).setRadius(coords.accuracy);
-        }
-
-        map.flyTo(latlng, 14, { duration: 1.0 });
-      },
-      (err) => {
-        console.error(err);
-        alert('Paikannus epäonnistui: ' + err.message);
-      },
-      { enableHighAccuracy: true, maximumAge: 0 }
-    );
-  };
 
   return (
     <div className="map-wrapper">
