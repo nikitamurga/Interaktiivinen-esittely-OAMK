@@ -170,7 +170,7 @@ function OmaSijainti({ aktiivinen }) {
 const FILTERS = [
   { value: 'all', label: 'Kaikki' },
   { value: 'shopping', label: 'Kauppakeskukset' },
-  { value: 'vapaa-aika', label: 'Kultturi' },
+  { value: 'vapaa-aika', label: 'Kulttuuri' },
   { value: 'transport', label: 'Liikenne' },
   { value: 'iltamenot', label: 'Iltamenot' },
   { value: 'education', label: 'OAMK' },
