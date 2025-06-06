@@ -1,10 +1,14 @@
+// Etusivu toimii projektin aloitusnäkymänä.
+// Täällä käyttäjä voi siirtyä kartalle tai opiskelijan polkuun.
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Etusivu.css';
 
 function Etusivu() {
+  // React Routerin hook navigointiin
   const navigate = useNavigate();
 
+  // Etusivun sankarikuva ja toimintapainikkeet
   return (
     <div className="hero">
       <div className="hero-content">

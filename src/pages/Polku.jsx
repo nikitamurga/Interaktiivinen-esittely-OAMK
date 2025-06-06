@@ -1,8 +1,11 @@
+// Tämä sivu esittää "opiskelijan polun" vaihe vaiheelta.
+// Jokainen slide sisältää kuvia ja tekstiä.
 import React, { useState } from 'react';
 import './Polku.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
+// Taulukko dia-sisällöistä. Tästä on helppo lisätä tai muokata vaiheita.
 const slides = [
   {
     title: 'Saapuminen Ouluun',
@@ -462,10 +465,14 @@ const slides = [
 },
 ];
 
+// Slider-komponentti joka näyttää yhden vaiheen kerrallaan
 export default function Polku() {
+  // Nykyisen dian indeksi
   const [index, setIndex] = useState(0);
+  // Datanäkymä nykyisestä diasta
   const slide = slides[index];
 
+  // Kuvatiedostojen polku utils
   const getSrc = (file) =>
     `${import.meta.env.BASE_URL}photos/${encodeURI(file)}`;
 
@@ -473,6 +480,7 @@ export default function Polku() {
   const next = () =>
     setIndex((i) => Math.min(i + 1, slides.length - 1));
 
+  // Rakennetaan karuselli ja navigointipainikkeet
   return (
     <div className="polku-wrapper">
       <h2>
