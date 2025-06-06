@@ -1,6 +1,9 @@
+// Yläpalkki. Näkyy kaikilla sivuilla ja sisältää linkkejä
+// sekä kielipainikkeet (toiminnot puuttuvat vielä).
 import { Link } from 'react-router-dom';
 import './Header.css';
 
+// TODO: lisää valikkolinkkien reititys ja toimiva kielenvaihto.
 function Header() {
   return (
     <header className="header">

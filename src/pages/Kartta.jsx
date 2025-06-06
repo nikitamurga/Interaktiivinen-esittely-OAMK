@@ -1,3 +1,7 @@
+// Interaktiivinen karttasivu. Käyttää Leaflet-kirjastoa
+// ja ryhmittelee pisteitä klustereiksi. Sijainnit määritellään
+// alla olevassa taulukossa.
+// TODO: hakutoiminto ja kieliversiot.
 import React, { useState, useMemo, useEffect } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import L from 'leaflet';
@@ -9,6 +13,8 @@ import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 
+// Leaflet ei aina siivoa kaikkea poistuessaan.
+// Tämä komponentti poistaa kartan oikein, kun sivu vaihtuu.
 function MapCleanup() {
   const map = useMap();
   useEffect(() => {
@@ -21,6 +27,7 @@ function MapCleanup() {
   return null;
 }
 
+// Apufunktio palauttaa Leaflet-ikonin annetusta tiedostonimestä
 const makeIcon = (filename) =>
   new L.Icon({
     iconUrl: `${import.meta.env.BASE_URL}${filename}`,
@@ -29,6 +36,7 @@ const makeIcon = (filename) =>
     popupAnchor: [0, -30],
   });
 
+// Lista kartalla näytettävistä kohteista ja niiden tiedoista
 const LOCATIONS = [
 
   // Kauppakeskukset
@@ -94,6 +102,7 @@ const LOCATIONS = [
 ];
 
 
+// Luo markercluster-kerroksen annetuista kohteista
 function ClusterLayer({ locations }) {
   const map = useMap();
   useEffect(() => {
@@ -123,6 +132,7 @@ function ClusterLayer({ locations }) {
   return null;
 }
 
+// Sovittaa kartan näkymän niin, että kaikki kohteet näkyvät
 function SovitaRajat({ locations }) {
   const map = useMap();
   useEffect(() => {
@@ -133,6 +143,7 @@ function SovitaRajat({ locations }) {
   return null;
 }
 
+// Näyttää käyttäjän oman sijainnin kartalla, jos lupa saadaan
 function OmaSijainti({ aktiivinen }) {
   const map = useMap();
   useEffect(() => {
@@ -167,6 +178,7 @@ function OmaSijainti({ aktiivinen }) {
   return null;
 }
 
+// Mahdolliset suodatukset kartan kohteille
 const FILTERS = [
   { value: 'all', label: 'Kaikki' },
   { value: 'shopping', label: 'Kauppakeskukset' },
@@ -181,11 +193,16 @@ const FILTERS = [
   { value: 'palvelut', label: 'Viranomaiset ja palvelut' },
 ];
 
+// Pääkomponentti karttasivulle
 export default function Kartta() {
+  // Valittu karttapalvelu (perus vs. satelliitti)
   const [layer, setLayer]       = useState('osm');
+  // Suodatus kohteiden tyypin mukaan
   const [filter, setFilter]     = useState('all');
+  // Näytetäänkö oma sijainti kartalla
   const [locateAkt, setLocateAkt] = useState(false);
 
+  // Laskee eri tyyppisten kohteiden määrät suodatinta varten
   const counts = useMemo(() => {
     const c = { all: LOCATIONS.length };
     LOCATIONS.forEach(loc => {
@@ -194,16 +211,19 @@ export default function Kartta() {
     return c;
   }, []);
 
+  // Palauttaa suodatetun listan valitun tyypin mukaan
   const filtered = useMemo(
     () => filter === 'all' ? LOCATIONS : LOCATIONS.filter(l => l.type === filter),
     [filter]
   );
 
+  // Karttapalveluiden osoitteet
   const tileUrls = {
     osm:       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
   };
 
+  // Varsinainen karttakomponentti ja valitsimet
   return (
     <div className="map-wrapper">
       <h2 style={{ textAlign: 'center' }}>Interaktiivinen kartta</h2>
@@ -258,6 +278,7 @@ export default function Kartta() {
         scrollWheelZoom
         style={{ height: '70vh', width: '100%' }}
       >
+        {/* Poistaa kartan oikein kun komponentti tuhotaan */}
         <MapCleanup />
         <TileLayer
         key={layer}
@@ -265,8 +286,11 @@ export default function Kartta() {
         attribution="© OpenStreetMap contributors"
         />
 
+        {/* Sovitetaan kartta näyttämään kaikki valitut kohteet */}
         <SovitaRajat locations={filtered} />
+        {/* Klusteroi markerit ryhmiin */}
         <ClusterLayer locations={filtered} />
+        {/* Käyttäjän oma sijainti */}
         <OmaSijainti aktiivinen={locateAkt} />
       </MapContainer>
     </div>
