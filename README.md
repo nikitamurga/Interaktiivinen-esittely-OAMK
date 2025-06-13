@@ -20,7 +20,7 @@ This project is part of a student internship and aims to:
 - [React Router](https://reactrouter.com/)
 - [Figma (for prototyping)](https://www.figma.com/)
 - [Leaflet](https://leafletjs.com/) (used for the interactive map)
-- [i18next](https://react.i18next.com/) (for multilingual support)
+- [i18next](https://react.i18next.com/) (PLANNED for multilingual support)
 
 ---
 
