@@ -1,5 +1,8 @@
+// Alatunniste. Sisältää yhteystiedot ja muut tärkeät linkit.
+// Mahdollisia tulevia parannuksia: some-ikonien oikeat linkit.
 import './Footer.css';
 
+// TODO: lisää linkit ja mahdollinen kielituki.
 function Footer() {
   return (
     <footer className="oamk-footer">

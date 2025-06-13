@@ -1,3 +1,5 @@
+// Sovelluksen aloituspiste. Täällä luodaan React-root
+// ja käynnistetään varsinainen App-komponentti.
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
