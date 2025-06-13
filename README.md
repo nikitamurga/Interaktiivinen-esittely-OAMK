@@ -19,8 +19,20 @@ This project is part of a student internship and aims to:
 - [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/)
 - [Figma (for prototyping)](https://www.figma.com/)
-- [Leaflet](https://leafletjs.com/) (planned for interactive map)
+- [Leaflet](https://leafletjs.com/) (used for the interactive map)
 - [i18next](https://react.i18next.com/) (for multilingual support)
+
+## 🚀 Running Locally
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open the address printed in the terminal (usually <http://localhost:5173>) in your browser.
 
 ---
 
